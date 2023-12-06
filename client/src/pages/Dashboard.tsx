@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Loader } from "@/components/Loader";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Card,
@@ -43,7 +44,7 @@ export function Dashboard() {
   };
 
   if (noteQuery.isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (noteQuery.isError) {

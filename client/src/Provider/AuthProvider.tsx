@@ -1,3 +1,4 @@
+import { Loader } from "@/components/Loader";
 import { useAccount } from "@/hooks/user/useAccount";
 import { User } from "@/types";
 import { createContext } from "react";
@@ -22,7 +23,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   });
 
   if (userQuery.isLoading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (userQuery.isError) {

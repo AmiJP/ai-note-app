@@ -7,7 +7,7 @@ const axiosConfig = {
     "Content-Type": "application/json",
     Accept: "application/json",
   },
-  timeout: 2000,
+  timeout: 10000,
   withCredentials: true,
 };
 
