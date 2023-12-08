@@ -111,7 +111,9 @@ export const AddNote = () => {
                   )}
                 />
               </div>
-              <Button type="submit">Add Note</Button>
+              <Button type="submit" disabled={addNoteMutation.isPending}>
+                {addNoteMutation.isPending ? "Adding..." : "Add Note"}
+              </Button>
             </form>
           </Form>
         </CardContent>

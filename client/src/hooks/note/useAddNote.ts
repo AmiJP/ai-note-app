@@ -10,7 +10,10 @@ export const useAddNote = () => {
     onSuccess: (result) => {
       if (result.data) {
         queryClient.setQueryData(["notes"], (oldNote: Note[]) => {
-          return [...oldNote, result.data];
+          if (oldNote) {
+            return [...oldNote, result.data];
+          }
+          queryClient.invalidateQueries({ queryKey: ["notes"] });
         });
       }
     },

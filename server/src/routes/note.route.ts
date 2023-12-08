@@ -17,7 +17,7 @@ router.post(
   createNoteValidator,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const { title, image, note } = req.body;
+      const { title, note } = req.body;
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
@@ -29,7 +29,7 @@ router.post(
 
       const userId = req.session.userId as number;
 
-      const result = await createNote(title, image, note, userId);
+      const result = await createNote(title, note, userId);
 
       res.send(result);
     } catch (error) {

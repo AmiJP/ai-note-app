@@ -3,6 +3,7 @@ import { Loader } from "@/components/Loader";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -17,6 +18,7 @@ interface Note {
   id: number;
   title: string;
   note: string;
+  image: string;
 }
 
 export function Dashboard() {
@@ -66,9 +68,16 @@ export function Dashboard() {
           return (
             <Card key={ele.id} className="w-[350px] m-4">
               <CardHeader>
+                {ele.image ? (
+                  <img src={ele.image}></img>
+                ) : (
+                  <img src="https://t3.ftcdn.net/jpg/04/34/72/82/240_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg" />
+                )}
+              </CardHeader>
+              <CardContent>
                 <CardTitle>{ele.title}</CardTitle>
                 <CardDescription>{ele.note}</CardDescription>
-              </CardHeader>
+              </CardContent>
               <CardFooter className="flex justify-between">
                 <Button
                   onClick={() => {
