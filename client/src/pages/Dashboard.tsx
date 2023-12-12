@@ -69,7 +69,7 @@ export function Dashboard() {
             <Card key={ele.id} className="w-[350px] m-4">
               <CardHeader>
                 {ele.image ? (
-                  <img src={ele.image}></img>
+                  <img src={ele.image} alt={ele.title + " image"}></img>
                 ) : (
                   <img src="https://t3.ftcdn.net/jpg/04/34/72/82/240_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg" />
                 )}
