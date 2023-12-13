@@ -21,13 +21,12 @@ export async function getAllNotes(userId: number) {
     };
   }
 
-  let yaya = Promise.all(
-    result.map(async (ele) => {
-      let img = await awsClient.getImg(ele.image);
-      return { ...ele, image: img };
+  let notes = Promise.all(
+    result.map(async (note) => {
+      let img = await awsClient.getImg(note.image);
+      return { ...note, image: img };
     })
   );
 
-  console.log(yaya);
-  return yaya;
+  return notes;
 }

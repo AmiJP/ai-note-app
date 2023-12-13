@@ -40,7 +40,7 @@ export async function createNote(
     data: {
       id: result.id,
       title: result.title,
-      image: result.image,
+      image: imageUrl,
       note: result.note,
     },
   };

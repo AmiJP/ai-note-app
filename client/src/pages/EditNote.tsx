@@ -39,7 +39,7 @@ export const EditNote = () => {
 
   if (noteId < 1) {
     toast({
-      title: "noteId is not valis",
+      title: "noteId is not valid",
     });
     navigate("/dashboard");
   }
@@ -130,7 +130,9 @@ export const EditNote = () => {
                   )}
                 />
               </div>
-              <Button type="submit">save Note</Button>
+              <Button type="submit" disabled={editNoteMutation.isPending}>
+                {editNoteMutation.isPending ? "Saving..." : "Save Note"}
+              </Button>
             </form>
           </Form>
         </CardContent>
